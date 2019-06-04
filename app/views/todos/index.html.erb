@@ -6,6 +6,7 @@
     <p class="card-text"><%= todo.description %></p>
     <%= link_to 'Mostrar', todo_path(todo) %>
     <%= link_to 'Editar', edit_todo_path(todo) %>
+    <%= link_to 'Eliminar', todo, method: :delete %>
   </div>
 </div>
 <br>
