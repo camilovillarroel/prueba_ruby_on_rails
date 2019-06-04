@@ -1,7 +1,12 @@
-<h2><%= @todo.description %></h2>
-<h3><%if @todo.completed %>
-<%= 'Tarea completa' %>
-<% else %>
-<%='Tarea no completa' %>
-<% end %>
-</h3>
+<div class="card text-white bg-info mb-3" style="max-width: 100%;">
+  <div class="card-header"><%= @todo.description %></div>
+    <div class="card-body">
+    <p class="card-text">
+    <%if @todo.completed %>
+        <%= 'Tarea completa' %>
+    <% else %>
+        <%='Tarea no completa' %>
+    <% end %></p>
+    </div>
+</div>
+<%= link_to 'Back', todos_path, class:"btn btn-secondary" %>

@@ -1,5 +1,5 @@
-<h1>ToDo</h1>
-<%= link_to 'Crear ToDo', todos_new_path %>
+<h1><strong> ToDos</strong></h1>
+<%= link_to 'Crear ToDo', todos_new_path, class:"btn btn-danger mb-5" %>
 <div class="row">
 <% @todos.each do |todo| %>
 <div class="card text-white bg-primary mb-3 mx-3" style="max-width: 20rem;">
@@ -11,11 +11,11 @@
 <% end %></div>
   <div class="card-body">
     <p class="card-text"><%= todo.description %></p>
-    <%= link_to 'Mostrar', todo_path(todo) %>
-    <%= link_to 'Editar', edit_todo_path(todo) %>
-    <%= link_to 'Eliminar', todo, method: :delete %>
+    <%= link_to 'Mostrar', todo_path(todo), class:"btn btn-secondary mb-1" %>
+    <%= link_to 'Editar', edit_todo_path(todo), class:"btn btn-secondary mb-1" %>
+    <%= link_to 'Eliminar', todo, method: :delete, class:"btn btn-secondary mb-1" %>
     <br>
-    <%= link_to 'Marcar como Completado', complete_todo_path(todo), method: :post %>
+    <%= link_to 'Marcar como Completado', complete_todo_path(todo), method: :post, class:"btn btn-warning" %>
   </div>
 </div>
 <br>
