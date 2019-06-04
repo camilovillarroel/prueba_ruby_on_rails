@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   root 'todos#index'
   get 'todos/new'
   post '/todos', to: 'todos#create'
+  get '/todos/:id', to: 'todos#show', as:'todo'
 end
