@@ -1,7 +1,8 @@
 <h1>ToDo</h1>
-
+<%= link_to 'Crear ToDo', todos_new_path %>
+<div class="row">
 <% @todos.each do |todo| %>
-<div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+<div class="card text-white bg-primary mb-3 mx-3" style="max-width: 20rem;">
 <div class="card-header">
 <%if todo.completed %>
 <%= 'Tarea completa ✔' %>
@@ -13,11 +14,13 @@
     <%= link_to 'Mostrar', todo_path(todo) %>
     <%= link_to 'Editar', edit_todo_path(todo) %>
     <%= link_to 'Eliminar', todo, method: :delete %>
+    <br>
     <%= link_to 'Marcar como Completado', complete_todo_path(todo), method: :post %>
   </div>
 </div>
 <br>
 
 <% end %>
+</div>
 
-<%= link_to 'Crear ToDo', todos_new_path %>
+

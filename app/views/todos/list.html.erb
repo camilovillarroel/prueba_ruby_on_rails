@@ -1,0 +1,54 @@
+<div class="row">
+    <div class="col-sm-6">
+        <h1>ToDo No Completados</h1>
+        
+        <% @todos.each do |todo| %>
+
+            <% if !todo.completed  %>
+
+                <div class="card text-white bg-primary mb-3" style="max-width: 100%;">
+                    <div class="card-header">
+                        <%if todo.completed %>
+                            <%= 'Tarea completa ✔' %>
+                            <% else %>
+                            <%='Tarea NO completa' %>
+                        <% end %>
+                    </div>
+                <div class="card-body">
+                    <p class="card-text"><%= todo.description %></p>
+                    <%= link_to 'Mostrar', todo_path(todo) %>
+                    <%= link_to 'Editar', edit_todo_path(todo) %>
+                    <%= link_to 'Eliminar', todo, method: :delete %>
+                    <%= link_to 'Marcar como Completado', complete_todo_path(todo), method: :post %>
+                </div>
+                </div>
+            <% end %>
+        <% end %>
+    </div>
+        <div class="col-sm-6">
+        <h1>ToDo Completados</h1>
+        
+        <% @todos.each do |todo| %>
+
+            <% if todo.completed  %>
+
+                <div class="card text-white bg-primary mb-3" style="max-width: 100%;">
+                    <div class="card-header">
+                        <%if todo.completed %>
+                            <%= 'Tarea completa ✔' %>
+                            <% else %>
+                            <%='Tarea NO completa' %>
+                        <% end %>
+                    </div>
+                <div class="card-body">
+                    <p class="card-text"><%= todo.description %></p>
+                    <%= link_to 'Mostrar', todo_path(todo) %>
+                    <%= link_to 'Editar', edit_todo_path(todo) %>
+                    <%= link_to 'Eliminar', todo, method: :delete %>
+                    <%= link_to 'Marcar como Completado', complete_todo_path(todo), method: :post %>
+                </div>
+                </div>
+            <% end %>
+        <% end %>
+    </div>
+</div>
